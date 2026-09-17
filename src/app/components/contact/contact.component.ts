@@ -394,26 +394,200 @@ interface ContactInfo {
         grid-template-columns: 1fr;
       }
     }
-    @media (max-width: 576px) {
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-      .contact-info, .contact-form-wrap {
-        padding: 1.5rem;
-      }
-      .contact-grid {
-        gap: 2rem;
-      }
-      .contact-info-text,
-      .contact-value {
-        overflow-wrap: anywhere;
-      }
-      .form-submit {
-        width: 100%;
-        justify-content: center;
-      }
-     
-    }
+  @media (max-width: 576px) {
+
+  /* Prevent horizontal scrolling */
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Main container */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Contact section */
+  .contact-section {
+    padding: 50px 15px;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: 100%;
+  }
+
+  /* Contact information card */
+  .contact-info {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Contact form wrapper */
+  .contact-form-wrap {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Form row */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Form groups */
+  .form-group {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  /* Labels */
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 7px;
+    font-weight: 600;
+  }
+
+  /* Inputs */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Textarea */
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  /* Prevent long text from breaking layout */
+  .contact-info-text,
+  .contact-value,
+  .contact-title,
+  .contact-description {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Contact headings */
+  .contact-info h2,
+  .contact-form-wrap h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  /* Paragraph text */
+  .contact-info p,
+  .contact-form-wrap p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Contact items */
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  /* Contact icons */
+  .contact-icon {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contact values */
+  .contact-value {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Submit button */
+  .form-submit {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Buttons */
+  button {
+    max-width: 100%;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Cards */
+  .card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Reduce large desktop spacing */
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* Mobile spacing */
+  .mt-large {
+    margin-top: 30px;
+  }
+
+  .mb-large {
+    margin-bottom: 30px;
+  }
+}
+
   `],
 })
 export class ContactComponent {
