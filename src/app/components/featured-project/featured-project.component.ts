@@ -67,6 +67,10 @@ interface ProjectDetail {
 
     .featured-image-wrap {
       position: relative;
+      min-width: 0;
+    }
+    .featured-content {
+      min-width: 0;
     }
     .featured-image {
       border-radius: var(--radius-lg);

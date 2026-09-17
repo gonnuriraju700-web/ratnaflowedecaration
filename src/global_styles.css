@@ -193,6 +193,32 @@ p {
   align-items: center;
 }
 
+@media (max-width: 576px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .container-lux {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .section-title {
+    max-width: 100%;
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .section-subtitle {
+    max-width: 34rem;
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
+}
+
 /* ---------- Buttons ---------- */
 .btn-lux {
   display: inline-flex;

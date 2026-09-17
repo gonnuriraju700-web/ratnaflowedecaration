@@ -185,6 +185,9 @@ interface ContactInfo {
       grid-template-columns: 1fr 1.3fr;
       gap: 3rem;
     }
+    .contact-grid > * {
+      min-width: 0;
+    }
 
     /* Info */
     .contact-info {
@@ -301,6 +304,9 @@ interface ContactInfo {
       gap: 1.2rem;
     }
     .form-group {
+      min-width: 0;
+    }
+    .form-group {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
@@ -313,6 +319,8 @@ interface ContactInfo {
       color: var(--text-dark);
     }
     .form-input {
+      width: 100%;
+      min-width: 0;
       padding: 0.8rem 1rem;
       border: 1.5px solid rgba(36, 26, 29, 0.1);
       border-radius: var(--radius-sm);
@@ -392,6 +400,17 @@ interface ContactInfo {
       }
       .contact-info, .contact-form-wrap {
         padding: 1.5rem;
+      }
+      .contact-grid {
+        gap: 2rem;
+      }
+      .contact-info-text,
+      .contact-value {
+        overflow-wrap: anywhere;
+      }
+      .form-submit {
+        width: 100%;
+        justify-content: center;
       }
       .toast-notification {
         bottom: 20px;

@@ -204,6 +204,7 @@ import { PROCESS_STEPS } from '../../data/site-data';
       z-index: 1;
     }
     .m-step-content {
+      min-width: 0;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
