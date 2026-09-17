@@ -219,6 +219,13 @@ p {
   }
 }
 
+@media (max-width: 768px) {
+  .reveal.fade-left,
+  .reveal.fade-right {
+    transform: translateY(24px);
+  }
+}
+
 /* ---------- Buttons ---------- */
 .btn-lux {
   display: inline-flex;
