@@ -412,12 +412,7 @@ interface ContactInfo {
         width: 100%;
         justify-content: center;
       }
-      .toast-notification {
-        bottom: 20px;
-        right: 15px;
-        left: 15px;
-        max-width: none;
-      }
+     
     }
   `],
 })
