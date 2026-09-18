@@ -174,7 +174,7 @@ interface ContactInfo {
       }
     </section>
   `,
-  styles: [`
+   styles: [`
     .section-header {
       max-width: 700px;
       margin: 0 auto 3.5rem;
@@ -389,205 +389,257 @@ interface ContactInfo {
       color: var(--text-muted);
     }
 
-    @media (max-width: 991px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  @media (max-width: 576px) {
+  /* ================================
+   TABLET
+================================ */
+@media (max-width: 991px) {
 
-  /* Prevent horizontal scrolling */
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Main container */
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /* Contact section */
-  .contact-section {
-    padding: 50px 15px;
-  }
-
-  /* Contact grid */
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
+    grid-template-columns: 1fr !important;
     width: 100%;
+    max-width: 100%;
+    gap: 2rem;
+  }
+
+  .contact-grid > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .contact-info,
+  .contact-form-wrap {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 576px) {
+
+  /* Main contact section */
+  .contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 1.5rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* Contact information card */
   .contact-info {
-    width: 100%;
-    padding: 25px 20px;
-    border-radius: 16px;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+
+    padding: 1.25rem !important;
+    margin: 0 !important;
+
+    border-radius: 18px;
+    overflow: hidden;
   }
 
-  /* Contact form wrapper */
+  /* Contact form card */
   .contact-form-wrap {
-    width: 100%;
-    padding: 25px 20px;
-    border-radius: 16px;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+
+    padding: 1.25rem !important;
+    margin: 0 !important;
+
+    border-radius: 18px;
   }
 
-  /* Form row */
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+  /* Heading */
+  .contact-info-title {
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.7rem;
   }
 
-  /* Form groups */
-  .form-group {
-    width: 100%;
-    margin-bottom: 16px;
-  }
+  /* Description */
+  .contact-info-text {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
 
-  /* Labels */
-  .form-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 7px;
-    font-weight: 600;
-  }
+    max-width: 100% !important;
+    width: 100% !important;
 
-  /* Inputs */
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    max-width: 100%;
-    min-height: 48px;
-    padding: 12px 14px;
-    font-size: 16px;
-    border-radius: 10px;
-    box-sizing: border-box;
-  }
-
-  /* Textarea */
-  .form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-  }
-
-  /* Prevent long text from breaking layout */
-  .contact-info-text,
-  .contact-value,
-  .contact-title,
-  .contact-description {
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  /* Contact headings */
-  .contact-info h2,
-  .contact-form-wrap h2 {
-    font-size: 24px;
-    line-height: 1.3;
-    margin-bottom: 12px;
-  }
-
-  /* Paragraph text */
-  .contact-info p,
-  .contact-form-wrap p {
-    font-size: 14px;
-    line-height: 1.6;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
   }
 
   /* Contact items */
+  .contact-items {
+    width: 100%;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
   .contact-item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 18px;
+    gap: 0.8rem;
   }
 
-  /* Contact icons */
+  /* Icons */
   .contact-icon {
-    flex: 0 0 42px;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
+
+    min-width: 40px !important;
+    flex: 0 0 40px !important;
+
+    font-size: 1rem;
   }
 
-  /* Contact values */
+  /* Text area beside icon */
+  .contact-item > div:last-child {
+    min-width: 0;
+    width: calc(100% - 48px);
+  }
+
+  .contact-label {
+    font-size: 0.65rem !important;
+    margin-bottom: 0.25rem;
+  }
+
   .contact-value {
-    font-size: 14px;
-    line-height: 1.5;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  /* Email */
+  .contact-value a {
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  /* Form rows */
+  .form-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .form-group {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .form-input {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    font-size: 0.9rem;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .form-textarea {
+    min-height: 120px;
   }
 
   /* Submit button */
   .form-submit {
-    width: 100%;
-    min-height: 50px;
-    padding: 13px 20px;
-    display: flex;
-    align-items: center;
+    width: 100% !important;
+    max-width: 100%;
     justify-content: center;
-    gap: 8px;
-    font-size: 15px;
-    border-radius: 10px;
     box-sizing: border-box;
   }
 
-  /* Buttons */
-  button {
-    max-width: 100%;
+  /* Social icons */
+  .contact-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
   }
 
-  /* Images */
-  img {
-    max-width: 100%;
-    height: auto;
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
   }
 
-  /* Cards */
-  .card {
+  /* Section header */
+  .section-header {
     width: 100%;
+    max-width: 100%;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
     box-sizing: border-box;
   }
 
-  /* Section titles */
-  .section-title {
-    font-size: 28px;
-    line-height: 1.25;
-  }
+  /* Toast */
+  .toast-notification {
+    left: 15px !important;
+    right: 15px !important;
+    bottom: 20px !important;
 
-  .section-subtitle {
-    font-size: 14px;
-    line-height: 1.6;
-  }
+    width: auto !important;
+    max-width: none !important;
 
-  /* Reduce large desktop spacing */
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  /* Mobile spacing */
-  .mt-large {
-    margin-top: 30px;
-  }
-
-  .mb-large {
-    margin-bottom: 30px;
+    box-sizing: border-box;
+    padding: 1rem;
   }
 }
 
+
+/* ================================
+   VERY SMALL MOBILE
+================================ */
+@media (max-width: 380px) {
+
+  .contact-info,
+  .contact-form-wrap {
+    padding: 1rem !important;
+  }
+
+  .contact-info-title {
+    font-size: 1.2rem !important;
+  }
+
+  .contact-info-text {
+    font-size: 0.85rem !important;
+  }
+
+  .contact-value {
+    font-size: 0.85rem !important;
+  }
+
+  .contact-icon {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    flex-basis: 36px !important;
+  }
+
+  .contact-item > div:last-child {
+    width: calc(100% - 44px);
+  }
+}
   `],
 })
 export class ContactComponent {
